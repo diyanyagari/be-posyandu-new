@@ -1,0 +1,42 @@
+{
+    "version": 2,
+    "builds": [{ "src": "index.js", "use": "@now/node-server" }],
+    "routes": [
+        {
+            "src": "/getDataImunisasi/(?<id>[^/]+)",
+            "dest": "/index.js",
+            "methods": ["GET"]
+        },
+        {
+            "src": "/getDataDiri",
+            "dest": "/index.js",
+            "methods": ["POST"],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+                "Access-Control-Allow-Credentials": "true"
+            },
+            "continue": true
+        },
+        {
+            "src": "/getDataDiri",
+            "dest": "/index.js",
+            "methods": ["GET"]
+        },
+        {
+            "src": "/getAllImunisasi",
+            "dest": "/index.js",
+            "methods": ["GET"]
+        },
+        {
+            "src": "/insertDataDiri",
+            "dest": "/index.js",
+            "methods": ["POST"]
+        },
+        {
+            "src": "/insertDataImunisasi",
+            "dest": "/index.js",
+            "methods": ["POST"]
+        }
+    ]
+}
